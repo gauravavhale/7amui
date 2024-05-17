@@ -1,0 +1,51 @@
+.menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(249, 241, 241);
+    line-height: 30px;
+    text-align: right;
+    position: sticky;
+    top: 0;
+}
+
+.mobileMenu{
+    list-style: none;
+    background-color: #dbdbec;
+    margin: 0;
+    padding: 10px;
+    width: 130px;
+    position: absolute;
+    transition: 1s left
+}
+
+.mobileMenu > li {
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.menu > li{
+    display: inline;
+    margin-right: 15px;
+    letter-spacing: 4px;
+    font-size: 20px;
+}
+
+.mobileMenuBtn{
+    z-index: 9999;
+}
+
+.mobileMenuBtn>span{
+    width: 20px;
+    display: block;
+    border: 1px solid red;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.menuActive{
+    color: red;
+    font-weight: bold;
+    text-shadow: 1px 1px white;
+}
