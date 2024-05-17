@@ -23,7 +23,7 @@ export const Menu = () => {
     })
   }
 
-  useEffect(()=>{
+  useEffect(()=>{ 
     fnResize()
   },[])
 
