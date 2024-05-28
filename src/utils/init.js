@@ -1,4 +1,5 @@
 export const init={
     isLoggedIn:false,
-    userInfo:{}
+    userInfo:{},
+    isShowLoader:false
 }

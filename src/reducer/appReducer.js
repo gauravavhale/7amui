@@ -4,16 +4,14 @@ export const appReducer = (state,action) => {
         case 'AUTH' :
             state={
                 ...state,
-                isLoggedIn:action.payload
+                isLoggedIn:action.payload.isLoggedIn,
+                userInfo:action.payload.userInfo
             }
             break;
-            case 'USER_INFO' :
+            case 'LOADER':
                 state={
                     ...state,
-                    userInfo:{
-                        ...state.userInfo,
-                        ...action.payload
-                    }
+                    isShowLoader:action.payload
                 }
                 break;
     }
