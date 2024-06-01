@@ -1,10 +1,12 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { Fragment, useContext, useEffect, useRef, useState } from 'react'
 import styles from './Menu.module.css'
 import Link from 'next/link'
+import { ctx } from '@/context/appContext'
+
 export const Menu = () => {
   const [left,setLeft] = useState(-130);
   const [menuItem,setMenuItem]=useState(window.location.pathname.slice(1) || 'home') 
-
+  const ctxData = useContext(ctx)
   const [isMobileView,setIsMobileView]=useState(document.body.offsetWidth < 800 ? true :false);
   const refObj = useRef();
 
@@ -38,6 +40,17 @@ const fnMenuItemClick=(eve)=>{
     setLeft(-130)
   }
 }
+const fnLogout=(eve)=>{
+  eve.stopPropagation();
+  sessionStorage.clear();
+  ctxData.dispatch({
+    type:"AUTH",
+    payload:{
+      isLoggedIn:false,
+      userInfo:{}
+    }
+  })
+}
  
 return <Fragment>
           { isMobileView && <button onClick={fnMobileMenuBtnClick} className={`position-absolute end-0 ${styles.mobileMenuBtn}`}><span></span><span></span><span></span></button>}
@@ -52,7 +65,7 @@ return <Fragment>
                   <Link id="profile" className={`${menuItem == 'profile' && styles.menuActive}`} href="/profile">Profile</Link>
               </li>
               <li>
-                  <Link href="/login">Logout</Link>
+                  <Link onClick={fnLogout} id="logout" href="/login">Logout</Link>
               </li>
             </ul>
         </Fragment>

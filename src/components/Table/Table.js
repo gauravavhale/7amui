@@ -8,20 +8,18 @@ export const Table=(props)=>{
     <thead>
      <tr>
          {
-             headers.map((val,index)=>{
+             headers?.map((val,index)=>{
                  return <th key={'th'+index}>{val}</th>
              })
          }
-        
      </tr>
     </thead>
     <tbody> 
-    
     {
-     data.map((obj,index)=>{
+     data?.map((obj,index)=>{
          return <tr key={"tr"+index}>
                  {
-                     columns.map((val,index)=>{
+                     columns?.map((val,index)=>{
                          return <td key={"td"+index}>{obj[val]}</td>
                      })
                  }

@@ -28,16 +28,17 @@ const Login = () => {
     })
     const res = await ServerCall.sendPostReq("http://localhost:2020/auth/login",{data:dataObj})
     console.log(res);
-    const {uid,id} = res.data
-    if(uid){
+    const {uid,id,token} = res.data
+    if(uid && id && token){
       sessionStorage.uid=uid;
       sessionStorage.id=id;
+      sessionStorage.token=token
       ctxData.dispatch({
         type:"AUTH",
         payload:{
           isLoggedIn:true,
           userInfo:res.data
-        }
+        } 
       })
       router.push("/home")
     }else{

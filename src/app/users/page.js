@@ -14,7 +14,7 @@ const Users = () => {
     ctxData.dispatch({type:"LOADER",payload:true})
     try{
     const res = await ServerCall.sendGetReq("http://localhost:2020/student/get-std")
-    setData(res.data)
+    setData(Array.isArray(res.data)? res.data:[])
     console.log(res.data)
     } catch(e){
       console.log(e.message)
