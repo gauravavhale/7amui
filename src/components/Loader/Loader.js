@@ -5,7 +5,7 @@ export const Loader = () => {
   return (
     <div>
         <div className={styles.mask}></div>
-        <Image src='loader.gif' alt='Loading..'></Image>
+        <img src='loader.gif' alt='Loading..'></img>
     </div>
   )
 } 

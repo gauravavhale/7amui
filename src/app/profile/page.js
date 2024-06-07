@@ -35,7 +35,7 @@ const Profile = () => {
   }
   useEffect(()=>{
     fnGetUserInfo()
-  })
+  },[])
   const handleChange=(eve)=>{
     const inputControlsClonedArr=JSON.parse(JSON.stringify(inputControls));
     fnValidate(inputControlsClonedArr,eve )

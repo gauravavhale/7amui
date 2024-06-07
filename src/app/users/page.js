@@ -26,7 +26,7 @@ const Users = () => {
   }
   useEffect(()=>{
     fnGetUsers()
-  })
+  },[])
   return (
     <div>
       <Table 

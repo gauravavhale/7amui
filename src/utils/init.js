@@ -1,5 +1,5 @@
 export const init = {
-    isLoggedIn: window.sessionStorage.token,
+    isLoggedIn: sessionStorage.token,
     userInfo: {},
     isShowLoader: false
 }
